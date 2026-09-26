@@ -1,0 +1,27 @@
+---
+import Logo from "./Logo.astro";
+import { site } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label="Alex Works, home">
+        <Logo />
+      </a>
+      <p>Small internet products.</p>
+      <p class="quiet">Built somewhere in Canada.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#works">Products</a>
+      <a href={site.x} target="_blank" rel="noopener">X</a>
+      {site.github && <a href={site.github} target="_blank" rel="noopener">GitHub</a>}
+    </nav>
+    <div class="footer-end">
+      <p>© {year} Alex Works</p>
+      <p class="still"><span class="pill-dot" aria-hidden="true"></span> still building</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,27 @@
+---
+const steps = [
+  "Find a problem.",
+  "Build the smallest useful solution.",
+  "Put it online.",
+  "See if anyone cares.",
+  "Improve it if they do.",
+];
+---
+
+<section class="manifesto" id="about" aria-labelledby="about-title">
+  <div class="wrap manifesto-inner">
+    <p class="kicker">03 — Manifesto</p>
+    <h2 id="about-title">The internet doesn't need more bloated software.</h2>
+    <p class="manifesto-lead">I like building small products that do one thing well.</p>
+    <ol class="steps">
+      {
+        steps.map((step, index) => (
+          <li>
+            <span class="n">{String(index + 1).padStart(2, "0")}</span>
+            <span>{step}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

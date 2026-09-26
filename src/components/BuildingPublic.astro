@@ -1,0 +1,33 @@
+---
+import { site } from "../data/site";
+
+const notes = [
+  { id: "014", text: "ship → learn → repeat" },
+  { id: "015", text: "stop building. start marketing." },
+];
+---
+
+<section class="building" id="building" aria-labelledby="building-title">
+  <p class="kicker">04 — In public</p>
+  <h2 id="building-title">Building out loud.</h2>
+  <p class="building-copy">
+    I share what I'm building, what works, what fails, and everything in between.
+  </p>
+  <a class="btn btn-primary" href={site.x} target="_blank" rel="noopener">
+    Follow @{site.xHandle}
+    <svg class="chev chev-right" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+      <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span class="sr-only">, opens in a new tab</span>
+  </a>
+  <div class="notes">
+    {
+      notes.map((note) => (
+        <article class="note">
+          <p class="note-id">Note {note.id}</p>
+          <p class="note-text">{note.text}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

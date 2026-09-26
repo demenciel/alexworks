@@ -1,0 +1,59 @@
+---
+import { products } from "../data/products";
+
+const slots = [
+  { x: 18, y: 16, depth: "18px", delay: "0s", dur: "7.6s" },
+  { x: 76, y: 12, depth: "24px", delay: "-1.4s", dur: "8.6s" },
+  { x: 82, y: 48, depth: "12px", delay: "-2.2s", dur: "6.9s" },
+  { x: 16, y: 58, depth: "20px", delay: "-0.8s", dur: "9.1s" },
+  { x: 48, y: 80, depth: "15px", delay: "-3.1s", dur: "7.4s" },
+];
+
+const nodes = products.slice(0, slots.length).map((product, index) => ({
+  product,
+  slot: slots[index],
+}));
+
+const hub = { x: 48, y: 40 };
+---
+
+<div class="constellation" aria-hidden="true">
+  <svg class="wires" viewBox="0 0 100 100" preserveAspectRatio="none">
+    {
+      nodes.map(({ slot }) => (
+        <line
+          x1={hub.x}
+          y1={hub.y}
+          x2={slot.x}
+          y2={slot.y}
+          vector-effect="non-scaling-stroke"
+        />
+      ))
+    }
+  </svg>
+
+  <div class="hub" style={`left:${hub.x}%;top:${hub.y}%`}>
+    <span>LAB</span>
+  </div>
+
+  {
+    nodes.map(({ product, slot }) => (
+      <div
+        class="chip"
+        style={`left:${slot.x}%;top:${slot.y}%;--depth:${slot.depth};--delay:${slot.delay};--dur:${slot.dur}`}
+      >
+        <div class="chip-float">
+          <div class="chip-shift">
+            <div class="chip-card">
+              <span class="chip-mark">{product.mark}</span>
+              <span class="chip-state">
+                <i class:list={["mini-dot", product.status]} />
+                {product.status === "live" ? "Live" : "Lab"}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

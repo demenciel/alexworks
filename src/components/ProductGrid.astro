@@ -1,0 +1,32 @@
+---
+import ProductCard from "./ProductCard.astro";
+import { products } from "../data/products";
+
+const live = products.filter((product) => product.status === "live").length;
+const building = products.filter((product) => product.status === "building").length;
+const pad = (value: number) => String(value).padStart(2, "0");
+---
+
+<section class="works-section" id="works" aria-labelledby="works-title">
+  <div class="wrap works">
+    <div class="works-rail" aria-hidden="true">
+      <span>Plate 02</span>
+      <span>The works</span>
+    </div>
+    <div>
+      <header class="works-head">
+        <div>
+          <p class="kicker">02 — Shipped</p>
+          <h2 id="works-title">The Works</h2>
+        </div>
+        <p class="works-lede">
+          Things I've shipped.
+          <span>{pad(live)} live · {pad(building)} on the bench.</span>
+        </p>
+      </header>
+      <div class="works-grid">
+        {products.map((product, index) => <ProductCard product={product} index={index} />)}
+      </div>
+    </div>
+  </div>
+</section>

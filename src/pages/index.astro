@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import ProductGrid from "../components/ProductGrid.astro";
+import Manifesto from "../components/Manifesto.astro";
+import BuildingPublic from "../components/BuildingPublic.astro";
+import StatusBoard from "../components/StatusBoard.astro";
+import { products } from "../data/products";
+import { site } from "../data/site";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: site.name,
+      url: site.url,
+      description: site.description,
+    },
+    {
+      "@type": "Person",
+      name: "Alex",
+      url: site.x,
+    },
+    {
+      "@type": "ItemList",
+      itemListElement: products.map((product, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "WebApplication",
+          name: product.name,
+          description: product.description,
+          url: product.url,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<Layout>
+  <script is:inline type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <main id="main" tabindex="-1">
+    <Hero />
+    <ProductGrid />
+    <Manifesto />
+    <div class="wrap lab">
+      <BuildingPublic />
+      <StatusBoard />
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,15 @@
+---
+import type { ProductStatus } from "../data/products";
+
+interface Props {
+  status: ProductStatus;
+}
+
+const { status } = Astro.props;
+const label = status === "live" ? "Live" : "Building";
+---
+
+<span class:list={["pill", `pill-${status}`]}>
+  <span class="pill-dot" aria-hidden="true"></span>
+  {label}
+</span>

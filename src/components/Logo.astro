@@ -1,0 +1,15 @@
+---
+interface Props {
+  size?: number;
+}
+
+const { size = 28 } = Astro.props;
+---
+
+<span class="logo">
+  <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
+    <rect x="3.5" y="5" width="15" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"></rect>
+    <rect x="13" y="12.5" width="15" height="15" rx="3" fill="currentColor" class="logo-block"></rect>
+  </svg>
+  <span class="logo-name">Alex Works</span>
+</span>

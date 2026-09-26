@@ -1,0 +1,118 @@
+---
+import type { ProductVisual } from "../data/products";
+
+interface Props {
+  visual: ProductVisual;
+}
+
+const { visual } = Astro.props;
+---
+
+<div class="visual" data-visual={visual}>
+  {
+    visual === "route" && (
+      <svg viewBox="0 0 340 200" fill="none" aria-hidden="true">
+        <path d="M28 40h46M28 52h28" stroke="rgba(244,241,234,0.16)" stroke-width="1" />
+        <path d="M22 158C70 150 78 42 132 58s78 110 116 54 62-64 74-40" stroke="rgba(244,241,234,0.16)" stroke-width="14" stroke-linecap="round" />
+        <path class="route-path" d="M22 158C70 150 78 42 132 58s78 110 116 54 62-64 74-40" stroke="#d6ff4a" stroke-width="2.6" stroke-linecap="round" />
+        <circle cx="22" cy="158" r="4.5" fill="#f4f1ea" />
+        <circle cx="322" cy="72" r="5.5" fill="#d6ff4a" />
+        <g font-family="Geist Mono Variable, ui-monospace, monospace" font-size="12" fill="#b7b1a6" letter-spacing="1.5">
+          <text x="86" y="44">5.0 KM</text>
+          <text x="156" y="44">+48 M</text>
+          <text x="226" y="44">EASY</text>
+        </g>
+      </svg>
+    )
+  }
+
+  {
+    visual === "timeline" && (
+      <svg viewBox="0 0 280 320" fill="none" aria-hidden="true">
+        <path d="M46 28v264" stroke="rgba(244,241,234,0.16)" stroke-width="1" />
+        <g font-family="Geist Mono Variable, ui-monospace, monospace" font-size="11" fill="#b7b1a6" letter-spacing="1.5">
+          <text x="68" y="58">02:10</text>
+          <text x="68" y="118">04:40</text>
+          <text x="68" y="178">06:05</text>
+          <text x="68" y="238">07:50</text>
+          <text x="68" y="286">09:15</text>
+        </g>
+        <g font-family="Geist Mono Variable, ui-monospace, monospace" font-size="11" fill="#f4f1ea" letter-spacing="1.2">
+          <text x="128" y="58">FEED</text>
+          <text x="128" y="118">SLEEP</text>
+          <text x="128" y="178">CHANGE</text>
+          <text x="128" y="238">FEED</text>
+          <text x="128" y="286">SLEEP</text>
+        </g>
+        <circle cx="46" cy="54" r="5" fill="#f4f1ea" />
+        <circle cx="46" cy="114" r="5" fill="rgba(214,255,74,0.9)" />
+        <circle class="pulse-dot" cx="46" cy="174" r="5" fill="#d6ff4a" />
+        <circle cx="46" cy="234" r="5" fill="#f4f1ea" />
+        <circle cx="46" cy="282" r="4" stroke="#d6ff4a" stroke-width="1.4" />
+      </svg>
+    )
+  }
+
+  {
+    visual === "payslip" && (
+      <svg viewBox="0 0 300 210" fill="none" aria-hidden="true">
+        <rect x="22" y="18" width="256" height="174" rx="12" stroke="rgba(244,241,234,0.16)" />
+        <text x="38" y="46" fill="#8f8a81" font-family="Geist Mono Variable, ui-monospace, monospace" font-size="11" letter-spacing="1.6">
+          SAMPLE · CAD
+        </text>
+        <path d="M38 62h224" stroke="rgba(244,241,234,0.1)" />
+        <g font-family="Geist Mono Variable, ui-monospace, monospace" font-size="13">
+          <text x="38" y="92" fill="#b7b1a6">GROSS</text>
+          <text x="262" y="92" fill="#f4f1ea" text-anchor="end">4,280.00</text>
+          <text x="38" y="118" fill="#b7b1a6">TAX</text>
+          <text x="262" y="118" fill="#f4f1ea" text-anchor="end">812.40</text>
+          <text x="38" y="144" fill="#b7b1a6">CPP / EI</text>
+          <text x="262" y="144" fill="#f4f1ea" text-anchor="end">286.15</text>
+        </g>
+        <path d="M38 158h224" stroke="rgba(214,255,74,0.35)" />
+        <text x="38" y="180" fill="#d6ff4a" font-family="Geist Mono Variable, ui-monospace, monospace" font-size="13" letter-spacing="1.2">
+          NET
+        </text>
+        <text x="262" y="180" fill="#d6ff4a" font-family="Geist Mono Variable, ui-monospace, monospace" font-size="13" text-anchor="end">
+          3,181.45
+        </text>
+      </svg>
+    )
+  }
+
+  {
+    visual === "print" && (
+      <svg viewBox="0 0 300 210" fill="none" aria-hidden="true">
+        <path d="M28 46V28h18M254 28h18v18M28 164v18h18M254 182h18v-18" stroke="#f4f1ea" stroke-width="1.4" />
+        <rect x="58" y="46" width="184" height="118" stroke="rgba(244,241,234,0.35)" />
+        <rect x="70" y="58" width="160" height="94" stroke="rgba(214,255,74,0.7)" stroke-dasharray="3 4" />
+        <text x="78" y="96" fill="#f4f1ea" font-family="Geist Mono Variable, ui-monospace, monospace" font-size="12" letter-spacing="1.4">
+          300 DPI
+        </text>
+        <text x="78" y="116" fill="#d6ff4a" font-family="Geist Mono Variable, ui-monospace, monospace" font-size="12" letter-spacing="1.4">
+          BLEED OK
+        </text>
+        <circle cx="214" cy="128" r="8" stroke="#d6ff4a" stroke-width="1.4" />
+        <path d="M214 122v12M208 128h12" stroke="#d6ff4a" stroke-width="1.2" />
+      </svg>
+    )
+  }
+
+  {
+    visual === "nodes" && (
+      <svg viewBox="0 0 300 210" fill="none" aria-hidden="true">
+        <path class="node-link" d="M54 112H118M150 96l42-28M150 128l46 30" stroke="rgba(214,255,74,0.55)" stroke-width="1.2" />
+        <circle cx="46" cy="112" r="16" stroke="rgba(244,241,234,0.4)" />
+        <circle cx="132" cy="112" r="18" fill="#d6ff4a" />
+        <circle cx="206" cy="62" r="14" stroke="rgba(244,241,234,0.4)" />
+        <circle cx="214" cy="164" r="14" stroke="rgba(244,241,234,0.4)" />
+        <g font-family="Geist Mono Variable, ui-monospace, monospace" font-size="10" letter-spacing="1.2">
+          <text x="28" y="150" fill="#b7b1a6">FIND</text>
+          <text x="112" y="116" fill="#14140a">AGENT</text>
+          <text x="186" y="40" fill="#b7b1a6">VALIDATE</text>
+          <text x="188" y="196" fill="#b7b1a6">OPERATE</text>
+        </g>
+      </svg>
+    )
+  }
+</div>
