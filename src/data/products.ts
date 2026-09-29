@@ -1,5 +1,5 @@
 export type ProductStatus = "live" | "building";
-export type ProductVisual = "route" | "timeline" | "payslip" | "print" | "nodes";
+export type ProductVisual = "route" | "timeline" | "payslip" | "print" | "nodes" | "funnel";
 export type ProductSpan = "feature" | "tall" | "standard";
 
 export interface Product {
@@ -67,6 +67,18 @@ export const products: Product[] = [
     tags: ["Print", "Utility"],
     featured: false,
     visual: "print",
+    span: "standard",
+  },
+  {
+    name: "FounderTriage",
+    mark: "TRIAGE",
+    description:
+      "Diagnose whether the bottleneck is traffic, positioning, activation, pricing, demand or retention — before you waste another month building.",
+    url: "https://triage.alexworks.app",
+    status: "live",
+    tags: ["Startups", "Diagnostics"],
+    featured: false,
+    visual: "funnel",
     span: "standard",
   },
   {

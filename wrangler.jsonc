@@ -9,7 +9,6 @@
     "not_found_handling": "404-page"
   },
   "routes": [
-    { "pattern": "alexworks.app", "custom_domain": true },
-    { "pattern": "www.alexworks.app", "custom_domain": true }
+    { "pattern": "alexworks.app", "custom_domain": true }
   ]
 }
