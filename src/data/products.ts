@@ -1,4 +1,4 @@
-export type ProductStatus = "live" | "building";
+export type ProductStatus = "live" | "building" | "dead";
 export type ProductVisual = "route" | "timeline" | "payslip" | "print" | "nodes" | "funnel";
 export type ProductSpan = "feature" | "tall" | "standard";
 
@@ -21,6 +21,30 @@ export interface Product {
  */
 export const products: Product[] = [
   {
+    name: "FounderTriage",
+    mark: "TRIAGE",
+    description:
+      "Diagnose whether the bottleneck is traffic, positioning, activation, pricing, demand or retention — before you waste another month building.",
+    url: "https://triage.alexworks.app",
+    status: "live",
+    tags: ["Startups", "Diagnostics"],
+    featured: true,
+    visual: "funnel",
+    span: "feature",
+  },
+  {
+    name: "MCP X-Ray",
+    mark: "XRAY",
+    description:
+      "Inspect an MCP server's tools, schemas, capabilities and annotations before you connect it. Free, fast, and no signup.",
+    url: "https://mcpxray.alexworks.app",
+    status: "live",
+    tags: ["AI", "Tools"],
+    featured: false,
+    visual: "nodes",
+    span: "tall",
+  },
+  {
     name: "FreeRun",
     mark: "RUN",
     description:
@@ -28,9 +52,9 @@ export const products: Product[] = [
     url: "https://run.alexworks.app",
     status: "live",
     tags: ["Running", "Tools"],
-    featured: true,
+    featured: false,
     visual: "route",
-    span: "feature",
+    span: "standard",
   },
   {
     name: "BabyLog",
@@ -42,7 +66,7 @@ export const products: Product[] = [
     tags: ["Family", "Tracking"],
     featured: false,
     visual: "timeline",
-    span: "tall",
+    span: "standard",
   },
   {
     name: "Paycheque",
@@ -69,36 +93,24 @@ export const products: Product[] = [
     span: "standard",
   },
   {
-    name: "FounderTriage",
-    mark: "TRIAGE",
+    name: "ReplyDesk",
+    mark: "REPLY",
     description:
-      "Diagnose whether the bottleneck is traffic, positioning, activation, pricing, demand or retention — before you waste another month building.",
-    url: "https://triage.alexworks.app",
-    status: "live",
-    tags: ["Startups", "Diagnostics"],
-    featured: false,
-    visual: "funnel",
-    span: "standard",
-  },
-  {
-    name: "MCP X-Ray",
-    mark: "XRAY",
-    description:
-      "Inspect an MCP server's tools, schemas, capabilities and annotations before you connect it. Free, fast, and no signup.",
-    url: "https://mcpxray.alexworks.app",
-    status: "live",
-    tags: ["AI", "Tools"],
+      "A practical X marketing AI for post automation and semi-automated replies.",
+    url: "https://replydesk.alexworks.app",
+    status: "building",
+    tags: ["X", "AI"],
     featured: false,
     visual: "nodes",
     span: "standard",
   },
   {
-    name: "MicroBusinessFoundry",
+    name: "MicroFoundry",
     mark: "FOUNDRY",
     description:
       "An experiment in discovering, validating and operating small internet businesses with autonomous agents.",
     url: "https://foundry.alexworks.app",
-    status: "building",
+    status: "dead",
     tags: ["AI", "Experiment"],
     featured: false,
     visual: "nodes",

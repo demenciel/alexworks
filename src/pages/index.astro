@@ -18,12 +18,15 @@ const jsonLd = {
     },
     {
       "@type": "Person",
-      name: "Alex",
+      name: site.person,
       url: site.x,
+      image: `${site.url}${site.photo}`,
     },
     {
       "@type": "ItemList",
-      itemListElement: products.map((product, index) => ({
+      itemListElement: products
+        .filter((product) => product.status !== "dead")
+        .map((product, index) => ({
         "@type": "ListItem",
         position: index + 1,
         item: {

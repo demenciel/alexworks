@@ -4,13 +4,14 @@ import { products } from "../data/products";
 
 const live = products.filter((product) => product.status === "live").length;
 const building = products.filter((product) => product.status === "building").length;
+const dead = products.filter((product) => product.status === "dead").length;
 const pad = (value: number) => String(value).padStart(2, "0");
 ---
 
 <section class="index" id="works" aria-labelledby="works-title">
   <header class="index-head">
     <h2 id="works-title">The Works</h2>
-    <p>{pad(live)} live · {pad(building)} on the bench</p>
+    <p>{pad(live)} live · {pad(building)} on the bench · {pad(dead)} dead</p>
   </header>
   <div class="index-list">
     {products.map((product) => <ProductCard product={product} />)}

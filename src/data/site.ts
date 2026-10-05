@@ -6,6 +6,8 @@ export const site = {
   description: "Small internet products, tools and experiments built by Alex.",
   x: "https://x.com/technoSaas",
   xHandle: "technoSaas",
+  person: "Alex",
+  photo: "/alex.jpg",
   locale: "en_CA",
   email: "",
   /**

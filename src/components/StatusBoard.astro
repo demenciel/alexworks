@@ -1,14 +1,15 @@
 ---
 import { products } from "../data/products";
 
-const shipped = products.length;
+const shipped = products.filter((product) => product.status !== "dead").length;
 const lab = products.filter((product) => product.status === "building").length;
+const killed = products.filter((product) => product.status === "dead").length;
 const currently = ["Shipping products", "Learning distribution", "Trying not to build too much"];
 
 const stats = [
   { label: "Shipped", value: String(shipped).padStart(2, "0") },
   { label: "In the lab", value: String(lab).padStart(2, "0") },
-  { label: "Killed", value: "???" },
+  { label: "Killed", value: String(killed).padStart(2, "0") },
   { label: "Coffee", value: "too much" },
 ];
 ---

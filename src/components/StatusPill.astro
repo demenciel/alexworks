@@ -6,10 +6,14 @@ interface Props {
 }
 
 const { status } = Astro.props;
-const label = status === "live" ? "Live" : "Building";
+const labels: Record<ProductStatus, string> = {
+  live: "Live",
+  building: "Building",
+  dead: "Dead",
+};
 ---
 
 <span class:list={["pill", `pill-${status}`]}>
   <span class="pill-dot" aria-hidden="true"></span>
-  {label}
+  {labels[status]}
 </span>
