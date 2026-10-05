@@ -17,8 +17,7 @@ export interface Product {
 }
 
 /**
- * The whole product index. Add one object to publish another product.
- * The hero constellation shows the first five.
+ * The whole product index. Add one object to publish another card.
  */
 export const products: Product[] = [
   {
@@ -79,6 +78,18 @@ export const products: Product[] = [
     tags: ["Startups", "Diagnostics"],
     featured: false,
     visual: "funnel",
+    span: "standard",
+  },
+  {
+    name: "MCP X-Ray",
+    mark: "XRAY",
+    description:
+      "Inspect an MCP server's tools, schemas, capabilities and annotations before you connect it. Free, fast, and no signup.",
+    url: "https://mcpxray.alexworks.app",
+    status: "live",
+    tags: ["AI", "Tools"],
+    featured: false,
+    visual: "nodes",
     span: "standard",
   },
   {

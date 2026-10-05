@@ -7,26 +7,12 @@ const building = products.filter((product) => product.status === "building").len
 const pad = (value: number) => String(value).padStart(2, "0");
 ---
 
-<section class="works-section" id="works" aria-labelledby="works-title">
-  <div class="wrap works">
-    <div class="works-rail" aria-hidden="true">
-      <span>Plate 02</span>
-      <span>The works</span>
-    </div>
-    <div>
-      <header class="works-head">
-        <div>
-          <p class="kicker">02 — Shipped</p>
-          <h2 id="works-title">The Works</h2>
-        </div>
-        <p class="works-lede">
-          Things I've shipped.
-          <span>{pad(live)} live · {pad(building)} on the bench.</span>
-        </p>
-      </header>
-      <div class="works-grid">
-        {products.map((product, index) => <ProductCard product={product} index={index} />)}
-      </div>
-    </div>
+<section class="index" id="works" aria-labelledby="works-title">
+  <header class="index-head">
+    <h2 id="works-title">The Works</h2>
+    <p>{pad(live)} live · {pad(building)} on the bench</p>
+  </header>
+  <div class="index-list">
+    {products.map((product) => <ProductCard product={product} />)}
   </div>
 </section>

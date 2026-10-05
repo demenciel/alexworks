@@ -1,38 +1,31 @@
 ---
-import ProductVisual from "./ProductVisual.astro";
 import StatusPill from "./StatusPill.astro";
 import { displayName, productHost, type Product } from "../data/products";
 
 interface Props {
   product: Product;
-  index: number;
 }
 
-const { product, index } = Astro.props;
-const number = String(index + 1).padStart(2, "0");
+const { product } = Astro.props;
 const host = productHost(product.url);
 ---
 
-<article class:list={["card", `span-${product.span}`]} data-status={product.status}>
-  <a class="card-link" href={product.url} target="_blank" rel="noopener">
-    <div class="card-meta">
-      <span class="idx">{number}</span>
-      <span class="tags">{product.tags.join(" · ")}</span>
+<article class="row" data-status={product.status}>
+  <a class="row-link" href={product.url} target="_blank" rel="noopener">
+    <span class="row-mark">{product.mark}</span>
+    <span class="row-copy">
+      <span class="row-name">{displayName(product.name)}</span>
+      <span class="row-desc">{product.description}</span>
+    </span>
+    <span class="row-meta">
       <StatusPill status={product.status} />
-    </div>
-    <ProductVisual visual={product.visual} />
-    <div class="card-body">
-      <h3>{displayName(product.name)}</h3>
-      <p>{product.description}</p>
-      <div class="card-foot">
-        <span class="host">{host}</span>
-        <span class="arrow" aria-hidden="true">
-          <svg viewBox="0 0 16 16" width="15" height="15">
-            <path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </span>
-        <span class="sr-only">Opens {product.name} in a new tab</span>
-      </div>
-    </div>
+      <span class="host">{host}</span>
+    </span>
+    <span class="arrow" aria-hidden="true">
+      <svg viewBox="0 0 16 16" width="15" height="15">
+        <path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+    <span class="sr-only">Opens {product.name} in a new tab</span>
   </a>
 </article>

@@ -1,5 +1,5 @@
 ---
-import Constellation from "./Constellation.astro";
+import ProductGrid from "./ProductGrid.astro";
 import { established, site } from "../data/site";
 ---
 
@@ -22,22 +22,6 @@ import { established, site } from "../data/site";
         Alex Works is my collection of small internet products, experiments, and tools built around problems worth solving.
       </p>
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#works">
-          Explore the products
-          <svg class="chev chev-down" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-            <path d="M8 3v8M4.5 8.5 8 12l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-        <a class="btn btn-ghost" href={site.x} target="_blank" rel="noopener">
-          Follow the build
-          <svg class="chev chev-right" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-            <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          <span class="sr-only"> on X, opens in a new tab</span>
-        </a>
-      </div>
-
       <p class="verbs">
         <span>Est. {established}</span>
         <span class="sep" aria-hidden="true"></span>
@@ -47,9 +31,17 @@ import { established, site } from "../data/site";
         <span class="sep" aria-hidden="true"></span>
         <span>Iterate</span>
       </p>
+
+      <a class="follow-link" href={site.x} target="_blank" rel="noopener">
+        Follow the build
+        <svg class="chev chev-right" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+          <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span class="sr-only"> on X, opens in a new tab</span>
+      </a>
     </div>
 
-    <Constellation />
+    <ProductGrid />
   </div>
   <p class="spine">alexworks.app</p>
 </section>
