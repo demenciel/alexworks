@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DocumentBody from "../components/DocumentBody.astro";
+---
+
+<Layout title="AlexWorks Privacy | Google-connected products" description="Privacy disclosures for the AlexWorks website and Google-connected product family.">
+  <DocumentBody>
+    <h1>AlexWorks Privacy</h1>
+    <p>Updated October 7, 2026. AlexWorks is a product family operated by Alex Couture. Different products have different data flows; the policies linked below explain them individually.</p>
+    <h2>Google's shared AlexWorks identity</h2>
+    <p>Google's consent screen may say AlexWorks when connecting CopyOTP, Bot Receipts, or FreeRun. These integrations share a Google Cloud project, but each product requests its own permissions. CopyOTP requests Gmail read-only access. Bot Receipts and FreeRun use Google account sign-in, not Gmail-reading features.</p>
+    <p>Revoking the shared AlexWorks permission through <a href="https://myaccount.google.com/connections">Google Account Connections</a> may interrupt more than one product. Revocation prevents future authorized API access but does not automatically delete account data already stored by a server-backed product. Use that product's deletion controls or contact the operator.</p>
+    <h2>CopyOTP</h2>
+    <p>CopyOTP reads recent Gmail messages to find numeric login codes. Email content, account email addresses, and codes are processed temporarily on the user's device, not on an AlexWorks server. Chrome manages OAuth tokens. CopyOTP has no analytics, AI processing, or stored email/code history. Codes reach the clipboard only after a Copy click.</p>
+    <p><a href="/copyotp/privacy">Full CopyOTP privacy policy</a> · <a href="/copyotp">About CopyOTP</a></p>
+    <h2>Bot Receipts</h2>
+    <p>Google or GitHub supplies account identity for sign-in. Bot Receipts stores account information and the run receipts and evidence sent to a workspace on its server infrastructure. It is not a Gmail-reading app. Its policy explains payments, use of workspace data, and deletion on request.</p>
+    <p><a href="https://botsreceipt.app/privacy">Bot Receipts privacy policy</a></p>
+    <h2>FreeRun</h2>
+    <p>Google or GitHub supplies profile identity for account sign-in. FreeRun handles authentication on its server infrastructure and stores account sessions in Cloudflare D1. Location and route-provider processing are separate from Google sign-in; the FreeRun policy explains those flows. It is not a Gmail-reading app.</p>
+    <p><a href="https://run.alexworks.app/privacy">FreeRun privacy policy</a></p>
+    <h2>This website</h2>
+    <p>alexworks.app is a static product website hosted by Cloudflare. It loads Umami website analytics. Hosting and analytics services process technical website-visit information; this is separate from CopyOTP and does not receive its Gmail messages, login codes, or OAuth tokens.</p>
+    <h2>Google API data</h2>
+    <p>Use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements. Google data is used for the user-facing purpose described by the product requesting it, not sold or used to determine creditworthiness.</p>
+    <h2>Contact</h2>
+    <p>For privacy or account-data questions, email <a href="mailto:hello@alexworks.app">hello@alexworks.app</a>. Name the product involved. Do not send passwords, login codes, or OAuth tokens. Material changes to these data flows will be reflected in the relevant product policy.</p>
+  </DocumentBody>
+</Layout>
