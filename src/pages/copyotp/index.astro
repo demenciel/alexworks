@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DocumentBody from "../../components/DocumentBody.astro";
+---
+
+<Layout title="CopyOTP by AlexWorks" description="Copy a recent Gmail login code without opening the email.">
+  <DocumentBody>
+    <h1>CopyOTP</h1>
+    <p>Copy a recent Gmail login code without opening the email. A lightweight, open-source Chrome extension by AlexWorks.</p>
+    <p><strong>Currently in testing. Not yet published on the Chrome Web Store.</strong></p>
+    <img src="/copyotp-preview.png" alt="CopyOTP popup showing a fictional login code and a copy button" width="380" height="534" />
+    <h2>Your code, within reach</h2>
+    <p>Connect Gmail using Google's OAuth flow, request a login code, and open CopyOTP. Select the matching sender and message, then copy the code. Refresh or wait for a new message while the popup remains open.</p>
+    <p>CopyOTP supports 4-8 digit numeric codes in English messages received within the last five minutes. It does not automatically fill or submit login forms. Always check the sender and the intended service.</p>
+    <h2>Read-only. Processed on your device.</h2>
+    <p>The Gmail permission allows mailbox reading, but CopyOTP limits its scans to recent messages. No email content, codes, or tokens are sent to an AlexWorks backend, analytics provider, or AI service. CopyOTP does not send, delete, modify, or mark messages as read.</p>
+    <p>Google's consent screen uses the shared AlexWorks identity. Removing that Google grant can affect other AlexWorks products using the same project.</p>
+    <p><a href="/copyotp/privacy">Privacy policy</a> · <a href="https://github.com/demenciel/copyotp">Source code and testing setup</a> · <a href="https://github.com/demenciel/copyotp/issues">Support</a></p>
+    <p>MIT licensed. Contributions are welcome. The screenshot above uses fictional data.</p>
+  </DocumentBody>
+</Layout>
