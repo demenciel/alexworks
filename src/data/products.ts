@@ -1,4 +1,4 @@
-export type ProductStatus = "live" | "building" | "dead";
+export type ProductStatus = "live" | "building" | "validation" | "dead";
 export type ProductVisual = "route" | "timeline" | "payslip" | "print" | "nodes" | "funnel";
 export type ProductSpan = "feature" | "tall" | "standard";
 
@@ -43,6 +43,29 @@ export const products: Product[] = [
     featured: false,
     visual: "nodes",
     span: "tall",
+  },
+  {
+    name: "CopyOTP",
+    mark: "OTP",
+    description:
+      "Open-source Chrome extension that copies Gmail login codes while you stay on the login page. In review on the Chrome Web Store.",
+    url: "https://github.com/demenciel/copyotp",
+    status: "validation",
+    tags: ["Chrome", "Open source"],
+    featured: false,
+    visual: "nodes",
+    span: "standard",
+  },
+  {
+    name: "AgentDoor",
+    mark: "DOOR",
+    description: "Does AI recommend your business?",
+    url: "https://agentdoor.alexworks.app/",
+    status: "building",
+    tags: ["AI", "Discovery"],
+    featured: false,
+    visual: "funnel",
+    span: "standard",
   },
   {
     name: "FreeRun",

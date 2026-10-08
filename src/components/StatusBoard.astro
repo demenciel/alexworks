@@ -1,8 +1,8 @@
 ---
 import { products } from "../data/products";
 
-const shipped = products.filter((product) => product.status !== "dead").length;
-const lab = products.filter((product) => product.status === "building").length;
+const shipped = products.filter((product) => product.status === "live").length;
+const lab = products.filter((product) => product.status === "building" || product.status === "validation").length;
 const killed = products.filter((product) => product.status === "dead").length;
 const currently = ["Shipping products", "Learning distribution", "Trying not to build too much"];
 
