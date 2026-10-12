@@ -26,7 +26,7 @@ export const products: Product[] = [
     description:
       "Reply to posts on X with the right meme, fast. A practical tool for staying funny and visible without living in your replies.",
     url: "https://meme.alexworks.app",
-    status: "building",
+    status: "live",
     tags: ["X", "AI"],
     featured: false,
     visual: "nodes",
