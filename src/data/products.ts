@@ -21,6 +21,18 @@ export interface Product {
  */
 export const products: Product[] = [
   {
+    name: "MemeReply",
+    mark: "MEME",
+    description:
+      "Reply to posts on X with the right meme, fast. A practical tool for staying funny and visible without living in your replies.",
+    url: "https://memereply.alexworks.app",
+    status: "building",
+    tags: ["X", "AI"],
+    featured: false,
+    visual: "nodes",
+    span: "standard",
+  },
+  {
     name: "FounderTriage",
     mark: "TRIAGE",
     description:
@@ -31,6 +43,18 @@ export const products: Product[] = [
     featured: true,
     visual: "funnel",
     span: "feature",
+  },
+  {
+    name: "CopyOTP",
+    mark: "OTP",
+    description:
+      "Open-source Chrome extension that copies Gmail login codes while you stay on the login page. Now available on the Chrome Web Store.",
+    url: "https://github.com/demenciel/copyotp",
+    status: "live",
+    tags: ["Chrome", "Open source"],
+    featured: false,
+    visual: "nodes",
+    span: "standard",
   },
   {
     name: "MCP X-Ray",
@@ -45,26 +69,15 @@ export const products: Product[] = [
     span: "tall",
   },
   {
-    name: "CopyOTP",
-    mark: "OTP",
+    name: "PrintFileCheck",
+    mark: "PRINT",
     description:
-      "Open-source Chrome extension that copies Gmail login codes while you stay on the login page. In review on the Chrome Web Store.",
-    url: "https://github.com/demenciel/copyotp",
-    status: "validation",
-    tags: ["Chrome", "Open source"],
+      "Free browser-based tools for checking whether files are actually ready to print.",
+    url: "https://print.alexworks.app",
+    status: "live",
+    tags: ["Print", "Utility"],
     featured: false,
-    visual: "nodes",
-    span: "standard",
-  },
-  {
-    name: "AgentDoor",
-    mark: "DOOR",
-    description: "Does AI recommend your business?",
-    url: "https://agentdoor.alexworks.app/",
-    status: "building",
-    tags: ["AI", "Discovery"],
-    featured: false,
-    visual: "funnel",
+    visual: "print",
     span: "standard",
   },
   {
@@ -104,27 +117,14 @@ export const products: Product[] = [
     span: "standard",
   },
   {
-    name: "PrintFileCheck",
-    mark: "PRINT",
-    description:
-      "Free browser-based tools for checking whether files are actually ready to print.",
-    url: "https://print.alexworks.app",
-    status: "live",
-    tags: ["Print", "Utility"],
-    featured: false,
-    visual: "print",
-    span: "standard",
-  },
-  {
-    name: "ReplyDesk",
-    mark: "REPLY",
-    description:
-      "A practical X marketing AI for post automation and semi-automated replies.",
-    url: "https://replydesk.alexworks.app",
+    name: "AgentDoor",
+    mark: "DOOR",
+    description: "Does AI recommend your business?",
+    url: "https://agentdoor.alexworks.app/",
     status: "building",
-    tags: ["X", "AI"],
+    tags: ["AI", "Discovery"],
     featured: false,
-    visual: "nodes",
+    visual: "funnel",
     span: "standard",
   },
   {
