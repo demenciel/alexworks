@@ -8,17 +8,18 @@ import DocumentBody from "../components/DocumentBody.astro";
     <h1>AlexWorks Privacy</h1>
     <p>Updated October 7, 2026. AlexWorks is a product family operated by Alex Couture. Different products have different data flows; the policies linked below explain them individually.</p>
     <h2>Google's shared AlexWorks identity</h2>
-    <p>Google's consent screen may say AlexWorks when connecting CopyOTP, Bot Receipts, or FreeRun. These integrations share a Google Cloud project, but each product requests its own permissions. CopyOTP requests Gmail read-only access. Bot Receipts and FreeRun use Google account sign-in, not Gmail-reading features.</p>
+    <p>Google's consent screen may say AlexWorks when connecting CopyOTP, FreeRun, or MemeReply. These integrations share a Google Cloud project, but each product requests its own permissions. CopyOTP requests Gmail read-only access. FreeRun and MemeReply use Google account sign-in, not Gmail-reading features. MemeReply requests only your email address, for sign-in and sign-up.</p>
     <p>Revoking the shared AlexWorks permission through <a href="https://myaccount.google.com/connections">Google Account Connections</a> may interrupt more than one product. Revocation prevents future authorized API access but does not automatically delete account data already stored by a server-backed product. Use that product's deletion controls or contact the operator.</p>
     <h2>CopyOTP</h2>
     <p>CopyOTP reads recent Gmail messages to find numeric login codes. Email content, account email addresses, and codes are processed temporarily on the user's device, not on an AlexWorks server. Chrome manages OAuth tokens. CopyOTP has no analytics, AI processing, or stored email/code history. Codes reach the clipboard only after a Copy click.</p>
     <p><a href="/copyotp/privacy">Full CopyOTP privacy policy</a> · <a href="/copyotp">About CopyOTP</a></p>
-    <h2>Bot Receipts</h2>
-    <p>Google or GitHub supplies account identity for sign-in. Bot Receipts stores account information and the run receipts and evidence sent to a workspace on its server infrastructure. It is not a Gmail-reading app. Its policy explains payments, use of workspace data, and deletion on request.</p>
-    <p><a href="https://botsreceipt.app/privacy">Bot Receipts privacy policy</a></p>
     <h2>FreeRun</h2>
     <p>Google or GitHub supplies profile identity for account sign-in. FreeRun handles authentication on its server infrastructure and stores account sessions in Cloudflare D1. Location and route-provider processing are separate from Google sign-in; the FreeRun policy explains those flows. It is not a Gmail-reading app.</p>
     <p><a href="https://run.alexworks.app/privacy">FreeRun privacy policy</a></p>
+    <h2>MemeReply</h2>
+    <p>MemeReply uses Google OAuth only for sign-in and sign-up. It requests your email address and nothing else: no Gmail, contacts, calendar, or Drive access. Your email address is used to create and identify your account and to contact you about it. It is not sold or used for advertising. MemeReply handles authentication on its server infrastructure and stores your account in Cloudflare D1.</p>
+    <p>MemeReply's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. To delete your account and email address, contact the operator. You can also revoke access in <a href="https://myaccount.google.com/connections">Google Account Connections</a>, which stops future sign-in with Google but does not by itself delete stored account data.</p>
+    <p><a href="https://meme.alexworks.app/privacy">MemeReply privacy policy</a></p>
     <h2>This website</h2>
     <p>alexworks.app is a static product website hosted by Cloudflare. It loads Umami website analytics. Hosting and analytics services process technical website-visit information; this is separate from CopyOTP and does not receive its Gmail messages, login codes, or OAuth tokens.</p>
     <h2>Google API data</h2>
